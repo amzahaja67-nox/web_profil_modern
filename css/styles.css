@@ -1,0 +1,280 @@
+    /* Smooth Scrolling & Responsive Offset */
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+
+    /* Custom Modern Themed Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0b1329;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #38bdf8;
+      border-radius: 9999px;
+      border: 2px solid #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #0284c7;
+      border: 2px solid #0b1329;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+
+    /* Modern Glassmorphic Utilities */
+    .glass-nav-light {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-nav-dark {
+      background: rgba(11, 19, 41, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Card Micro-Interactions */
+    .modern-card {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.25s ease;
+    }
+    .modern-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Theme Toggle Button Glow & Rotating Animation */
+    .theme-icon-spin {
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    }
+
+    /* Mobile Responsive Polish */
+    @media (max-width: 639px) {
+      html {
+        scroll-padding-top: 4.75rem;
+      }
+    }
+
+    /* Solid theme surfaces: keep each panel, control and header visually clear. */
+    :root {
+      color-scheme: light;
+      --page-bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-muted: #f1f5f9;
+      --surface-strong: #e2e8f0;
+      --ink: #172033;
+      --ink-muted: #475569;
+      --line: #cbd5e1;
+      --accent: #0369a1;
+    }
+
+    html.dark {
+      color-scheme: dark;
+      --page-bg: #070d19;
+      --surface: #0b1329;
+      --surface-muted: #111d33;
+      --surface-strong: #17263e;
+      --ink: #e5edf7;
+      --ink-muted: #a7b4c8;
+      --line: #2b3a52;
+      --accent: #38bdf8;
+    }
+
+    body {
+      background: var(--page-bg);
+      color: var(--ink);
+      transition: background-color 300ms ease, color 300ms ease;
+    }
+
+    header,
+    #mainNavbar {
+      background: var(--surface) !important;
+      background-image: none !important;
+      border-color: var(--line) !important;
+      color: var(--ink);
+    }
+
+    #mobileMenu,
+    .modern-card,
+    input,
+    select,
+    textarea {
+      background-image: none !important;
+    }
+
+    input,
+    select,
+    textarea {
+      background-color: var(--surface) !important;
+      color: var(--ink) !important;
+      border-color: var(--line) !important;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 0.75rem;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background-color 300ms ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--ink-muted);
+      opacity: 0.85;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+
+    button[class*="bg-gradient"],
+    a[class*="bg-gradient"] {
+      background-image: none !important;
+      background-color: #0369a1 !important;
+    }
+
+    html.dark button[class*="bg-gradient"],
+    html.dark a[class*="bg-gradient"] {
+      background-color: #0284c7 !important;
+    }
+
+    button[class*="bg-gradient"]:hover,
+    a[class*="bg-gradient"]:hover {
+      background-color: #075985 !important;
+    }
+
+    html.dark button[class*="bg-gradient"]:hover,
+    html.dark a[class*="bg-gradient"]:hover {
+      background-color: #0369a1 !important;
+    }
+
+    svg.lucide {
+      display: inline-block;
+      flex: 0 0 auto;
+      vertical-align: middle;
+    }
+
+    /* Recover readable contrast for legacy utility combinations in dark mode. */
+    html.dark .text-slate-600,
+    html.dark .text-slate-700,
+    html.dark .text-slate-800,
+    html.dark .text-slate-900,
+    html.dark .text-slate-950 {
+      color: #d6e1ef !important;
+    }
+
+    html.dark .text-slate-400 {
+      color: #a7b4c8 !important;
+    }
+
+    html.dark .text-ocean-800,
+    html.dark .text-ocean-900 {
+      color: #bae6fd !important;
+    }
+
+    html.dark .text-teal-800,
+    html.dark .text-teal-900 {
+      color: #99f6e4 !important;
+    }
+
+    /* Never allow accent headings to disappear when gradient text is unavailable. */
+    .text-transparent {
+      color: #0369a1 !important;
+      -webkit-text-fill-color: #0369a1 !important;
+      background-image: none !important;
+      background-clip: border-box !important;
+    }
+
+    html.dark .text-transparent {
+      color: #7dd3fc !important;
+      -webkit-text-fill-color: #7dd3fc !important;
+    }
+
+    html.dark .bg-slate-100,
+    html.dark .bg-slate-50 {
+      background-color: #111d33 !important;
+    }
+
+    html.dark .bg-slate-900\/90,
+    html.dark .bg-slate-950\/90 {
+      background-color: #111827 !important;
+    }
+
+    /* Consistent card rhythm prevents long titles/specifications from colliding. */
+    #produk .modern-card > div:last-child {
+      display: flex;
+      flex-direction: column;
+      min-height: 23rem;
+    }
+
+    #produk .modern-card h3 {
+      min-height: 3.5rem;
+      line-height: 1.25;
+    }
+
+    #produk .modern-card p {
+      min-height: 4.5rem;
+    }
+
+    #produk .modern-card .space-y-1\.5 {
+      min-height: 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    #produk .modern-card .space-y-1\.5 > div {
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    #produk .modern-card .space-y-1\.5 > div span:last-child {
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    #produk .modern-card button {
+      min-height: 2.75rem;
+      margin-top: 1rem;
+    }
+
+    .faq-toggle > span:first-child {
+      line-height: 1.45;
+    }
+
+    .faq-toggle .faq-icon {
+      margin-top: 0.15rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      text-wrap: pretty;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }

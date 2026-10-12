@@ -1,0 +1,6 @@
+{
+  "name": "Samudera Pasifik Seafood - B2B Export & Import",
+  "description": "Profil Perusahaan Pasar Ikan & Hasil Laut (Export & Import Seafood Company) berstandar internasional dengan sertifikasi HACCP, Cold Chain terintegrasi, dan layanan RFQ ekspor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
