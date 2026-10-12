@@ -226,7 +226,7 @@
         );
 
         if (modalWhatsAppBtn) {
-          modalWhatsAppBtn.href = `https://wa.me/628119882100?text=${waText}`;
+          modalWhatsAppBtn.href = `https://wa.me/6282120219236?text=${waText}`;
         }
 
         // Show Modal
